@@ -1,4 +1,4 @@
-export function Words({showOnScreen}) {
+export function Words({showOnScreen, focusIndex, focusRef}) {
 
     return(
 
@@ -6,7 +6,7 @@ export function Words({showOnScreen}) {
             <div className = "words">
             {showOnScreen.map((element, unique_id) =>(
                 
-                <div className='wordle' key = {unique_id}>{element.letter.toUpperCase()}</div>
+                <div ref={unique_id === focusIndex ? focusRef : null} className='wordle' key = {unique_id}>{element.letter.toUpperCase()}</div>
             ))}           
                 
             </div>

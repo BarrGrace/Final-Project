@@ -15,18 +15,14 @@ export function Wordle() {
     const [word, setWord] = useState(myWords);
     const [index, setIndex] = useState(0);
     const [doneButton, setDoneButton] = useState(false);
+    const focusWord = useRef(null);
 
     useEffect (() => {
 
+        if (focusWord.current) {
 
-        if (index == 25) {
-
-            return;
+            focusWord.current.focus();
         }
-        
-        //catch the spesific element but can't seems to get it in focus()
-        console.log(document.getElementsByClassName('wordle')[index])
-        document.getElementsByClassName('wordle')[index].focus();
     })
 
     function useKey(cb) {
@@ -134,7 +130,7 @@ export function Wordle() {
     <div className="App">
 
         <Header/>
-        <Words showOnScreen = {word}/>
+        <Words focusRef={focusWord} focusIndex={index} showOnScreen = {word}/>
         <Letters press = {addWord} done = {doneButton} release = {releaseButton} erase = {removeLetter}/>
     </div>
   );

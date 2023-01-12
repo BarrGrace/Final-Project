@@ -5,12 +5,12 @@ export function Popup({Popup, removePopUp}) {
 
     if (Popup === 'none') return null;
 
-    if (Popup === 'win' || Popup === 'lose') {
+    if (Popup === 'success' || Popup === 'fail') {
 
         return (
 
             <div className="popFinish">
-            You {Popup}<br/>
+            {Popup}<br/>
             <Link to = '/'><button onClick={() => removePopUp()}>continue</button></Link>
             </div>
         )

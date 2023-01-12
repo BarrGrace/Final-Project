@@ -6,7 +6,7 @@ export function Words({showOnScreen, focusIndex, focusRef}) {
             <div className = "words">
             {showOnScreen.map((element, unique_id) =>(
                 
-                <div ref={unique_id === focusIndex ? focusRef : null} className='wordle' key = {unique_id}>{element.letter.toUpperCase()}</div>
+                <div ref={unique_id === focusIndex ? focusRef : null} className='wordle' key = {unique_id} style={{backgroundColor: element.colour}}>{element.letter.toUpperCase()}</div>
             ))}           
                 
             </div>

@@ -94,6 +94,61 @@ html {
           }
         }
       }
+
+      .popFinish {
+
+        $font-size: 40px;
+
+        position: fixed;
+        background-color: rgb(175, 208, 236);
+        border: 1px solid black;
+        padding-bottom: 10px;
+        left: 30%;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size;
+        border-radius: 5px;
+        width: 40%;
+        height: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+
+        button {
+
+          font-size: $font-size;
+          background-color: rgb(38, 127, 209);
+          border-radius: 5px;
+
+          &:hover {
+
+            background-color: rgb(20, 48, 173);
+          }
+        }
+      }
+
+      .pop {
+
+        position: fixed;
+        left: 30%;
+        border: 1px solid black;
+        background-color: aliceblue;
+        border-radius: 5px;
+        padding: 3%;
+
+        button {
+
+          background-color: rgb(187, 164, 164);
+          border-radius: 3px;
+
+          &:hover {
+
+            background-color: red;
+          }
+        }
+      }
     
       .placeGrid {
       
@@ -117,12 +172,6 @@ html {
                 width: 70px;
                 border-radius: 15px;
                 font-size: 50px;
-                background-color: beige;
-    
-                &:focus {
-    
-                  background-color: red;
-                }
             }
           }
       }

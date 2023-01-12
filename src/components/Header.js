@@ -1,12 +1,11 @@
-export function Header() {
+export function Header({openPopUp}){
 
     return (
 
         <div className="header">
 
             <div>Wordle</div>
-            <button onClick={() => alert('help')}>&#10068;</button>
-            
+            <button onClick={() => openPopUp()}>&#10068;</button>
         </div>
     )
 }

@@ -137,11 +137,14 @@ html {
         background-color: aliceblue;
         border-radius: 5px;
         padding: 3%;
+        padding-top: 1%;
 
         button {
 
           background-color: rgb(187, 164, 164);
           border-radius: 3px;
+          position: relative;
+          left: 100%;
 
           &:hover {
 

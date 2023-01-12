@@ -3,6 +3,7 @@ import {Letters} from '../components/letters';
 import React, {useState, useEffect, useRef} from 'react'
 import { Header } from '../components/Header';
 import { Popup } from '../components/popUp.js';
+import { UsePopup } from '../hooks/usePopup.js';
 
 export function Wordle() {
 
@@ -26,7 +27,7 @@ export function Wordle() {
     const [index, setIndex] = useState(0);
     const [doneButton, setDoneButton] = useState(false);
     const focusWord = useRef(null);
-    const [pop, setPop] = useState('none');
+    const {openPopUp, pop, removePop, setPop} = UsePopup();
     const [letters, setLetters] = useState(myLetters);
 
     useEffect (() => {
@@ -204,18 +205,6 @@ export function Wordle() {
         const newWords = word.slice();
         setWord(newWords);
         setDoneButton(false);
-    }
-    function openPopUp() {
-
-        if (pop === 'none') {
-
-            setPop('else');
-        }
-    }
-
-    function removePop() {
-
-        setPop('none');
     }
 
 

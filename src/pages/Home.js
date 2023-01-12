@@ -2,22 +2,12 @@ import { Header } from "../components/Header";
 import React, {Link} from "react-router-dom";
 import { useState } from "react";
 import { Popup } from "../components/popUp";
+import { UsePopup } from "../hooks/usePopup";
 
 export function Home() {
     
     const [user, setUser] = useState('user');
-    const [pop, setPop] = useState('none');
-
-    function openPopUp() {
-
-        setPop('else');
-    }
-
-    function removePop() {
-
-        setPop('none');
-    }
-
+    const {openPopUp, pop, removePop} = UsePopup();
 
     return (
 

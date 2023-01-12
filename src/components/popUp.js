@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
+
 export function Popup({Popup, removePopUp}) {
-    console.log('im here')
 
     if (Popup === 'none') return null;
 

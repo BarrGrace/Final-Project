@@ -1,19 +1,33 @@
 import { Header } from "../components/Header";
 import React, {Link} from "react-router-dom";
 import { useState } from "react";
+import { Popup } from "../components/popUp";
 
 export function Home() {
-
+    
     const [user, setUser] = useState('user');
+    const [pop, setPop] = useState('none');
+
+    function openPopUp() {
+
+        setPop('else');
+    }
+
+    function removePop() {
+
+        setPop('none');
+    }
+
 
     return (
 
         <>
-        <Header/>
+        <Header openPopUp = {openPopUp}/>
+        <Popup Popup = {pop} removePopUp = {removePop}/>
         <div id = 'home'>
         <h1 id = 'homePage'>Home Page</h1>
         <h1>welcome {user}</h1>
-        {user == 'user' ?
+        {user === 'user' ?
         (
             <form onSubmit = {(element) => element.preventDefault()}>
             <label>Enter you name:</label>

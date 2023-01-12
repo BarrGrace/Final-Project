@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 export function Popup({Popup, removePopUp}) {
 
     if (Popup === 'none') return null;
@@ -21,6 +20,13 @@ export function Popup({Popup, removePopUp}) {
         <>
         <div className = "pop">
         <button onClick={() => removePopUp()}>X</button><br/>
+        {document.addEventListener('keydown', (buttonPress) => {
+
+            if (buttonPress.key === 'Escape') {
+
+                removePopUp();
+            }
+        })}
         <ul>
             <li>Each guess must be a valid 5-letter word.</li>
             <li>The colour of the tiles will change:
